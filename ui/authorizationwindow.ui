@@ -643,7 +643,7 @@ QCheckBox::indicator {
 
 QCheckBox::indicator:unchecked {
 	background-color: white;
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 QCheckBox::indicator:unchecked:hover {
@@ -838,7 +838,7 @@ QPushButton:pressed {
 	color: black;
 	font-family: Avenir;
 	font-size: 18px;
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 3px;
 	border-radius: 10px;
 	selection-background-color: black;
@@ -865,7 +865,7 @@ QPushButton:pressed {
 	color: black;
 	font-family: Avenir;
 	font-size: 18px;
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 3px;
 	padding-right: 78px;
 	border-radius: 10px;
@@ -1174,7 +1174,7 @@ QPushButton:pressed {
 	color: black;
 	font-family: Avenir;
 	font-size: 18px;
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 3px;
 	border-radius: 10px;
 	selection-background-color: black;
@@ -1201,7 +1201,7 @@ QPushButton:pressed {
 	color: black;
 	font-family: Avenir;
 	font-size: 18px;
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 3px;
 	padding-right: 78px;
 	border-radius: 10px;
@@ -1232,7 +1232,7 @@ QPushButton:pressed {
 	color: black;
 	font-family: Avenir;
 	font-size: 18px;
-	border: 1px solid black;
+	border: 2px solid black;
 	padding: 3px;
 	padding-right: 78px;
 	border-radius: 10px;
@@ -1323,8 +1323,6 @@ QPushButton:pressed {
     </widget>
    </widget>
   </widget>
-  <zorder>stackedWidget</zorder>
-  <zorder>gridLayoutWidget</zorder>
  </widget>
  <resources/>
  <connections/>

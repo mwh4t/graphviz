@@ -1,8 +1,7 @@
-#include "authorizationwindow.h"
+#include "include/authorizationwindow.h"
 #include "ui_authorizationwindow.h"
-#include "mainwindow.h"
-#include "funcs.h"
-#include <QMessageBox>
+#include "include/mainwindow.h"
+#include "include/funcs.h"
 
 AuthorizationWindow::AuthorizationWindow(QWidget *parent) :
     QDialog(parent),
@@ -24,12 +23,17 @@ void AuthorizationWindow::on_signin_pushButton_clicked()
     QString email = ui->email_lineEdit->text();
     QString password = ui->pw_lineEdit->text();
 
-    if(email == "123" && password == "123")
+    if(!isValidEmail(email)) // проверка почты
+        QMessageBox::critical(this, "", "Неверный формат почты!");
+    else if(!isValidPassword(password)) // проверка пароля
+        QMessageBox::critical(this, "", "Неверный формат пароля!");
+    else if(email == "123" && password == "123") // проверка соответствия
     {
         MainWindow *mw = new MainWindow();
         mw->show();
         this->close();
-    } else
+    }
+    else
         QMessageBox::critical(this, "", "Неверная почта или пароль!");
 }
 
