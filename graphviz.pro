@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -12,16 +12,20 @@ SOURCES += \
     main.cpp \
     src/authorizationwindow.cpp \
     src/mainwindow.cpp \
-    src/minor_funcs.cpp
+    src/utils.cpp
 
 HEADERS += \
     include/authorizationwindow.h \
-    include/funcs.h \
-    include/mainwindow.h
+    include/mainwindow.h \
+    include/utils.h \
+    libs/json.hpp
 
 FORMS += \
     ui/authorizationwindow.ui \
     ui/mainwindow.ui
+
+INCLUDEPATH += \
+    libs/json.hpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

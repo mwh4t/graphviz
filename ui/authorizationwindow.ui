@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>450</width>
     <height>600</height>
    </rect>
   </property>
@@ -492,8 +492,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
-     <height>601</height>
+     <width>450</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -503,7 +503,7 @@
     <widget class="QPushButton" name="signin_pushButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>160</x>
        <y>380</y>
        <width>141</width>
        <height>55</height>
@@ -551,7 +551,7 @@ QPushButton:pressed {
     <widget class="QLabel" name="signin_label">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>160</x>
        <y>50</y>
        <width>131</width>
        <height>51</height>
@@ -621,7 +621,7 @@ QPushButton:pressed {
     <widget class="QCheckBox" name="checkBox">
      <property name="geometry">
       <rect>
-       <x>290</x>
+       <x>340</x>
        <y>300</y>
        <width>101</width>
        <height>20</height>
@@ -652,7 +652,7 @@ QCheckBox::indicator:unchecked:hover {
 
 QCheckBox::indicator:checked {
 	background-color: black;
-	border: 1px solid black;
+	border: 2px solid black;
 }
 
 QCheckBox::indicator:checked:hover {
@@ -667,7 +667,7 @@ QCheckBox::indicator:checked:hover {
     <widget class="QLabel" name="noacc_label">
      <property name="geometry">
       <rect>
-       <x>100</x>
+       <x>130</x>
        <y>540</y>
        <width>96</width>
        <height>20</height>
@@ -686,7 +686,7 @@ QCheckBox::indicator:checked:hover {
     <widget class="QPushButton" name="noacc_pushButton">
      <property name="geometry">
       <rect>
-       <x>190</x>
+       <x>220</x>
        <y>530</y>
        <width>125</width>
        <height>40</height>
@@ -735,7 +735,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="forgotpw_pushButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>160</x>
        <y>560</y>
        <width>148</width>
        <height>40</height>
@@ -778,7 +778,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="show_pushButton">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>360</x>
        <y>260</y>
        <width>71</width>
        <height>21</height>
@@ -828,7 +828,7 @@ QPushButton:pressed {
       <rect>
        <x>10</x>
        <y>150</y>
-       <width>381</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -855,7 +855,7 @@ QPushButton:pressed {
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>381</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -929,7 +929,7 @@ QPushButton:pressed {
     <widget class="QLabel" name="signup_label">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>60</x>
        <y>40</y>
        <width>341</width>
        <height>61</height>
@@ -980,7 +980,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="show_pushButton_2">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>360</x>
        <y>260</y>
        <width>71</width>
        <height>21</height>
@@ -1028,7 +1028,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="signup_pushButton">
      <property name="geometry">
       <rect>
-       <x>130</x>
+       <x>160</x>
        <y>460</y>
        <width>141</width>
        <height>55</height>
@@ -1114,7 +1114,7 @@ QPushButton:pressed {
     <widget class="QPushButton" name="show_pushButton_3">
      <property name="geometry">
       <rect>
-       <x>310</x>
+       <x>360</x>
        <y>360</y>
        <width>71</width>
        <height>21</height>
@@ -1164,7 +1164,7 @@ QPushButton:pressed {
       <rect>
        <x>10</x>
        <y>150</y>
-       <width>381</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -1191,7 +1191,7 @@ QPushButton:pressed {
       <rect>
        <x>10</x>
        <y>250</y>
-       <width>381</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -1222,7 +1222,7 @@ QPushButton:pressed {
       <rect>
        <x>10</x>
        <y>350</y>
-       <width>381</width>
+       <width>431</width>
        <height>41</height>
       </rect>
      </property>
@@ -1296,7 +1296,7 @@ QPushButton:pressed {
     <widget class="QLabel" name="temporary_label">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>40</x>
        <y>180</y>
        <width>381</width>
        <height>211</height>

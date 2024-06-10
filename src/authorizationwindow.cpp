@@ -1,13 +1,39 @@
 #include "include/authorizationwindow.h"
 #include "ui_authorizationwindow.h"
 #include "include/mainwindow.h"
-#include "include/funcs.h"
+#include "include/utils.h"
 
 AuthorizationWindow::AuthorizationWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AuthorizationWindow)
 {
     ui->setupUi(this);
+
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("./users.db");
+    if(!db.open())
+        qDebug() << "Ошибка запуска БД: " << db.lastError();
+    else
+        createUsersTable(db);
+
+    json loadedData = jsonParser();
+
+    // проверка состояние флага для checkbox
+    if(!loadedData.empty() && loadedData.contains("checkbox state"))
+    {
+        bool isChecked = loadedData["checkbox state"].get<bool>();
+        ui->checkBox->setChecked(isChecked);
+
+        // подстановка данных юзера из json
+        if(isChecked && !loadedData.empty() && loadedData.contains("current account"))
+        {
+            QString email = QString::fromStdString(loadedData["current account"]["email"]);
+            QString password = QString::fromStdString(loadedData["current account"]["password"]);
+
+            ui->email_lineEdit->setText(email);
+            ui->pw_lineEdit->setText(password);
+        }
+    }
 }
 
 AuthorizationWindow::~AuthorizationWindow()
@@ -23,18 +49,97 @@ void AuthorizationWindow::on_signin_pushButton_clicked()
     QString email = ui->email_lineEdit->text();
     QString password = ui->pw_lineEdit->text();
 
-    if(!isValidEmail(email)) // проверка почты
-        QMessageBox::critical(this, "", "Неверный формат почты!");
-    else if(!isValidPassword(password)) // проверка пароля
-        QMessageBox::critical(this, "", "Неверный формат пароля!");
-    else if(email == "123" && password == "123") // проверка соответствия
+    // проверка формата почты
+    if(!isValidEmail(email))
     {
+        QMessageBox::critical(this, "", "Неверный формат почты!");
+        return;
+    }
+
+    // проверка формата пароля
+    if(!isValidPassword(password))
+    {
+        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        return;
+    }
+
+    // проверка наличия юзера в БД
+    if(checkUserCredentials(db, email, password))
+    {
+        QMessageBox::information(this, "", "Вход выполнен успешно!");
+
+        // переход в главное окно
+        MainWindow *mw = new MainWindow();
+        mw->show();
+        this->close();
+
+        // сохранение данных юзера в json
+        if(ui->checkBox->isChecked())
+        {
+            json j;
+            j["checkbox state"] = true;
+            j["current account"]["email"] = email.toStdString();
+            j["current account"]["password"] = password.toStdString();
+
+            jsonSaver(j);
+        }
+        else
+        {
+            json j;
+            j["checkbox state"] = false;
+            j["current account"]["email"] = email.toStdString();
+            j["current account"]["password"] = password.toStdString();
+
+            jsonSaver(j);
+        }
+    }
+    else
+        QMessageBox::critical(this, "", "Неверная почта или пароль!");
+}
+
+void AuthorizationWindow::on_signup_pushButton_clicked()
+{
+    /*
+     * функция регистрации аккаунта
+    */
+    QString email = ui->email_lineEdit_2->text();
+    QString password = ui->pw_lineEdit_2->text();
+    QString confirmPassword = ui->pw_lineEdit_3->text();
+
+    // проверка формата почты
+    if(!isValidEmail(email))
+    {
+        QMessageBox::critical(this, "", "Неверный формат почты!");
+        return;
+    }
+
+    // проверка формата пароля
+    if(!isValidPassword(password))
+    {
+        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        return;
+    }
+
+    // проверка совпадения паролей
+    if(password != confirmPassword)
+    {
+        QMessageBox::critical(this, "", "Пароли не совпадают!");
+        return;
+    }
+
+    // добавление нового юзера в БД
+    if(addUser(db, email, password))
+    {
+        QMessageBox::information(this, "", "Регистрация прошла успешно!");
+
+        // переход в главное окно
         MainWindow *mw = new MainWindow();
         mw->show();
         this->close();
     }
     else
-        QMessageBox::critical(this, "", "Неверная почта или пароль!");
+        QMessageBox::critical(this, "", "Ошибка регистрации! Возможно, пользователь "
+                                        "с такой почтой уже существует.");
 }
 
 void AuthorizationWindow::on_show_pushButton_clicked()

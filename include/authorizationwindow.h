@@ -2,6 +2,9 @@
 #define AUTHORIZATIONWINDOW_H
 
 #include <QDialog>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 
 namespace Ui {
 class AuthorizationWindow;
@@ -32,8 +35,13 @@ private slots:
 
     void on_back_pushButton_2_clicked();
 
+    void on_signup_pushButton_clicked();
+
 private:
     Ui::AuthorizationWindow *ui;
+
+    QSqlDatabase db;
+    QSqlQuery *query;
 };
 
 #endif // AUTHORIZATIONWINDOW_H
