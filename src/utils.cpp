@@ -1,6 +1,5 @@
 #include "include/utils.h"
-// #include "include/authorizationwindow.h"
-// #include "authorizationwindow.cpp"
+#include "include/mainwindow.h"
 
 void jsonSaver(const json& data)
 {
@@ -101,4 +100,21 @@ bool isValidPassword(const QString& password)
     const QRegularExpression pattern(R"((?=.*[A-Z])(?=.*[a-z])(?=.*\d).{4,})");
 
     return pattern.match(password).hasMatch();
+}
+
+void updateLineEdit(QLineEdit* lineEdit, const QString& text)
+{
+    /*
+     * функция обновления текста в lineEdit
+    */
+    // QString currentText = lineEdit->text();
+    lineEdit->insert(text);
+}
+
+void updateCursorPos(QLineEdit* lineEdit, const qint32 num)
+{
+    /*
+     * функция изменения позиции курсора в lineEdit
+    */
+    lineEdit->setCursorPosition(lineEdit->cursorPosition() + num);
 }

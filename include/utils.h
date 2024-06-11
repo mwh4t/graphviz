@@ -30,4 +30,7 @@ void cngEchoMode(QLineEdit *lineEdit);
 bool isValidEmail(const QString& email);
 bool isValidPassword(const QString& password);
 
+void updateLineEdit(QLineEdit* lineEdit, const QString& text);
+void updateCursorPos(QLineEdit* lineEdit, const qint32 num);
+
 #endif // UTILS_H

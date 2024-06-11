@@ -847,7 +847,7 @@ QPushButton:pressed {
 </string>
      </property>
      <property name="maxLength">
-      <number>40</number>
+      <number>50</number>
      </property>
     </widget>
     <widget class="QLineEdit" name="pw_lineEdit">
@@ -875,7 +875,7 @@ QPushButton:pressed {
 </string>
      </property>
      <property name="maxLength">
-      <number>32</number>
+      <number>45</number>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
@@ -1183,7 +1183,7 @@ QPushButton:pressed {
 </string>
      </property>
      <property name="maxLength">
-      <number>40</number>
+      <number>50</number>
      </property>
     </widget>
     <widget class="QLineEdit" name="pw_lineEdit_2">
@@ -1211,7 +1211,7 @@ QPushButton:pressed {
 </string>
      </property>
      <property name="maxLength">
-      <number>32</number>
+      <number>45</number>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
@@ -1242,7 +1242,7 @@ QPushButton:pressed {
 </string>
      </property>
      <property name="maxLength">
-      <number>32</number>
+      <number>45</number>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
