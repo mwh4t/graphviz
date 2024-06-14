@@ -1,4 +1,4 @@
-QT       += core gui sql
+QT       += core gui sql printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,6 +9,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    libs/qcustomplot/qcustomplot.cpp \
     main.cpp \
     src/authorizationwindow.cpp \
     src/mainwindow.cpp \
@@ -18,7 +19,9 @@ HEADERS += \
     include/authorizationwindow.h \
     include/mainwindow.h \
     include/utils.h \
-    libs/json.hpp
+    libs/exprtk/exprtk.hpp \
+    libs/json/json.hpp \
+    libs/qcustomplot/qcustomplot.h
 
 FORMS += \
     ui/authorizationwindow.ui \

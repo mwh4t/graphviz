@@ -10,6 +10,12 @@
     <height>600</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
+  </property>
   <property name="palette">
    <palette>
     <active>
@@ -483,505 +489,1160 @@
    <string>GraphViz</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QStackedWidget" name="stackedWidget">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>116</y>
-      <width>661</width>
-      <height>1411</height>
-     </rect>
-    </property>
-    <widget class="QWidget" name="page">
-     <widget class="QPushButton" name="increase_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>458</x>
-        <y>74</y>
-        <width>36</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>*</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="back_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>551</x>
-        <y>74</y>
-        <width>44</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="four_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>299</x>
-        <y>74</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="bracket1_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>74</y>
-        <width>35</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>(</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="six_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>405</x>
-        <y>74</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="zero_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>299</x>
-        <y>142</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="one_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>299</x>
-        <y>108</y>
-        <width>36</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="abc_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>142</y>
-        <width>57</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>ABC</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="y_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>71</x>
-        <y>40</y>
-        <width>37</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>y</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="eight_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>352</x>
-        <y>40</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>8</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="equal_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>405</x>
-        <y>142</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>=</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="backspace_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>551</x>
-        <y>108</y>
-        <width>95</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>backspace</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="funcs_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>551</x>
-        <y>40</y>
-        <width>64</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>funcs</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="more_or_equal_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>191</x>
-        <y>108</y>
-        <width>47</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&gt;=</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="ab_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>191</x>
-        <y>40</y>
-        <width>53</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>a^b</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="sqrt_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>122</x>
-        <y>142</y>
-        <width>55</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>sqrt</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="module_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>108</y>
-        <width>44</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>|a|</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="more_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>191</x>
-        <y>74</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="minus_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>458</x>
-        <y>108</y>
-        <width>36</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>-</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="less_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>122</x>
-        <y>74</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="five_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>352</x>
-        <y>74</y>
-        <width>38</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="forth_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>609</x>
-        <y>74</y>
-        <width>44</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>-&gt;</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="enter_pushButton_4">
-      <property name="geometry">
-       <rect>
-        <x>551</x>
-        <y>142</y>
-        <width>62</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>enter</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>13</y>
-        <width>125</width>
-        <height>21</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="nine_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>405</x>
-        <y>40</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>9</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="three_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>405</x>
-        <y>108</y>
-        <width>38</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="seven_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>299</x>
-        <y>40</y>
-        <width>38</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="less_or_equal_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>122</x>
-        <y>108</y>
-        <width>47</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>&lt;=</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pi_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>191</x>
-        <y>142</y>
-        <width>42</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Pi</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="comma_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>71</x>
-        <y>108</y>
-        <width>34</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>,</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="bracket2_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>71</x>
-        <y>74</y>
-        <width>35</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>)</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="a2_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>122</x>
-        <y>40</y>
-        <width>53</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>a^2</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="x_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>13</x>
-        <y>40</y>
-        <width>37</width>
-        <height>32</height>
-       </rect>
-      </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="1">
+     <widget class="QStackedWidget" name="stackedWidget_2">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="text">
-       <string>x</string>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <widget class="QStackedWidget" name="stackedWidget_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>450</width>
+          <height>600</height>
+         </rect>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="signin_page">
+         <widget class="QPushButton" name="signin_pushButton">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>380</y>
+            <width>141</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: black;
+	color: white;
+	font-family: Avenir;
+	font-size: 34px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: &quot;#232323&quot;;
+}
+
+QPushButton:pressed {
+	background-color: black;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Войти</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="signin_label">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>50</y>
+            <width>131</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>54</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Вход</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="email_label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>120</y>
+            <width>81</width>
+            <height>39</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>24</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Почта</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="pw_label">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>220</y>
+            <width>97</width>
+            <height>39</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>24</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Пароль</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="checkBox">
+          <property name="geometry">
+           <rect>
+            <x>340</x>
+            <y>300</y>
+            <width>101</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QCheckBox {
+	spacing: 4px;
+	font-family: Avenir;
+	font-size: 14px;
+	color: black;
+}
+
+QCheckBox::indicator {
+	width: 14px;
+	height: 14px;
+	border-radius: 4px;
+}
+
+QCheckBox::indicator:unchecked {
+	background-color: white;
+	border: 2px solid black;
+}
+
+QCheckBox::indicator:unchecked:hover {
+	background-color: #f0f0f0;
+}
+
+QCheckBox::indicator:checked {
+	background-color: black;
+	border: 2px solid black;
+}
+
+QCheckBox::indicator:checked:hover {
+	background-color: #484848;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Запомнить?</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="noacc_label">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>540</y>
+            <width>96</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>14</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Нет аккаунта?</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="noacc_pushButton">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>530</y>
+            <width>125</width>
+            <height>40</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: transparent;
+	color: black;
+	font-family: Avenir;
+	font-size: 14px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-decoration: underline;
+}
+
+QPushButton:hover {
+	color: &quot;#484848&quot;;
+}
+
+QPushButton:pressed {
+	color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Регистрация</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="forgotpw_pushButton">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>560</y>
+            <width>148</width>
+            <height>40</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: transparent;
+	color: black;
+	font-family: Avenir;
+	font-size: 14px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	text-decoration: underline;
+}
+
+QPushButton:hover {
+	color: &quot;#484848&quot;;
+}
+
+QPushButton:pressed {
+	color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Забыли пароль?</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="show_pushButton">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>260</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: transparent;
+	color: black;
+	font-family: Avenir;
+	font-size: 14px;
+	border: none;
+	border-radius: 10px;
+	text-decoration: underline;
+}
+
+QPushButton:hover {
+	color: &quot;#484848&quot;;
+}
+
+QPushButton:pressed {
+	color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Показать</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="email_lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>431</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-family: Avenir;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 3px;
+	border-radius: 10px;
+	selection-background-color: black;
+	selection-color: white;
+}
+</string>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="pw_lineEdit">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>250</y>
+            <width>431</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-family: Avenir;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 3px;
+	padding-right: 78px;
+	border-radius: 10px;
+	selection-background-color: black;
+	selection-color: white;
+}
+</string>
+          </property>
+          <property name="maxLength">
+           <number>45</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+         <zorder>pw_label</zorder>
+         <zorder>pw_lineEdit</zorder>
+         <zorder>signin_pushButton</zorder>
+         <zorder>signin_label</zorder>
+         <zorder>email_label</zorder>
+         <zorder>checkBox</zorder>
+         <zorder>noacc_label</zorder>
+         <zorder>noacc_pushButton</zorder>
+         <zorder>forgotpw_pushButton</zorder>
+         <zorder>show_pushButton</zorder>
+         <zorder>email_lineEdit</zorder>
+        </widget>
+        <widget class="QWidget" name="signup_page">
+         <widget class="QPushButton" name="back_pushButton_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>31</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: black;
+	color: white;
+	font-family: Avenir;
+	font-size: 24px;
+	border: none;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: &quot;#232323&quot;;
+}
+
+QPushButton:pressed {
+	background-color: black;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>&lt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="signup_label">
+          <property name="geometry">
+           <rect>
+            <x>60</x>
+            <y>40</y>
+            <width>341</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>54</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Регистрация</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="email_label_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>120</y>
+            <width>81</width>
+            <height>39</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>24</pointsize>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Почта</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="show_pushButton_2">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>260</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: transparent;
+	color: black;
+	font-family: Avenir;
+	font-size: 14px;
+	border: none;
+	border-radius: 10px;
+	text-decoration: underline;
+}
+
+QPushButton:hover {
+	color: &quot;#484848&quot;;
+}
+
+QPushButton:pressed {
+	color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Показать</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="signup_pushButton">
+          <property name="geometry">
+           <rect>
+            <x>160</x>
+            <y>460</y>
+            <width>141</width>
+            <height>55</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: black;
+	color: white;
+	font-family: Avenir;
+	font-size: 34px;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: &quot;#232323&quot;;
+}
+
+QPushButton:pressed {
+	background-color: black;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>Войти</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="pw_label_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>220</y>
+            <width>97</width>
+            <height>39</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>24</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Пароль</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="pw_label_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>320</y>
+            <width>211</width>
+            <height>39</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>24</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Повторите пароль</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="show_pushButton_3">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>360</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>-1</pointsize>
+            <underline>true</underline>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: transparent;
+	color: black;
+	font-family: Avenir;
+	font-size: 14px;
+	border: none;
+	border-radius: 10px;
+	text-decoration: underline;
+}
+
+QPushButton:hover {
+	color: &quot;#484848&quot;;
+}
+
+QPushButton:pressed {
+	color: black;
+}</string>
+          </property>
+          <property name="text">
+           <string>Показать</string>
+          </property>
+          <property name="autoDefault">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="email_lineEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>431</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-family: Avenir;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 3px;
+	border-radius: 10px;
+	selection-background-color: black;
+	selection-color: white;
+}
+</string>
+          </property>
+          <property name="maxLength">
+           <number>50</number>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="pw_lineEdit_2">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>250</y>
+            <width>431</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-family: Avenir;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 3px;
+	padding-right: 78px;
+	border-radius: 10px;
+	selection-background-color: black;
+	selection-color: white;
+}
+</string>
+          </property>
+          <property name="maxLength">
+           <number>45</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+         <widget class="QLineEdit" name="pw_lineEdit_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>350</y>
+            <width>431</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QLineEdit {
+	background-color: white;
+	color: black;
+	font-family: Avenir;
+	font-size: 18px;
+	border: 2px solid black;
+	padding: 3px;
+	padding-right: 78px;
+	border-radius: 10px;
+	selection-background-color: black;
+	selection-color: white;
+}
+</string>
+          </property>
+          <property name="maxLength">
+           <number>45</number>
+          </property>
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+         <zorder>back_pushButton_2</zorder>
+         <zorder>pw_label_3</zorder>
+         <zorder>pw_lineEdit_3</zorder>
+         <zorder>pw_label_2</zorder>
+         <zorder>pw_lineEdit_2</zorder>
+         <zorder>signup_label</zorder>
+         <zorder>email_label_2</zorder>
+         <zorder>show_pushButton_2</zorder>
+         <zorder>signup_pushButton</zorder>
+         <zorder>show_pushButton_3</zorder>
+         <zorder>email_lineEdit_2</zorder>
+        </widget>
+        <widget class="QWidget" name="forgotpw_page">
+         <widget class="QPushButton" name="back_pushButton_3">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>31</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+	background-color: black;
+	color: white;
+	font-family: Avenir;
+	font-size: 24px;
+	border: none;
+	border-radius: 10px;
+}
+
+QPushButton:hover {
+	background-color: &quot;#232323&quot;;
+}
+
+QPushButton:pressed {
+	background-color: black;
+}
+</string>
+          </property>
+          <property name="text">
+           <string>&lt;</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="temporary_label">
+          <property name="geometry">
+           <rect>
+            <x>40</x>
+            <y>180</y>
+            <width>381</width>
+            <height>211</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>54</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+            <kerning>true</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string>Ведутся технические работы :(</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="wordWrap">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2"/>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page1">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="3" column="8">
+         <widget class="QPushButton" name="back_pushButton">
+          <property name="text">
+           <string>&lt;-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="comma_pushButton">
+          <property name="text">
+           <string>,</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="7">
+         <widget class="QPushButton" name="increase_pushButton">
+          <property name="text">
+           <string>*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="5">
+         <widget class="QPushButton" name="two_pushButton">
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="y_pushButton">
+          <property name="text">
+           <string>y</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="7">
+         <widget class="QPushButton" name="minus_pushButton">
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="7">
+         <widget class="QPushButton" name="plus_pushButton">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="9">
+         <widget class="QPushButton" name="forth_pushButton">
+          <property name="text">
+           <string>-&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="5">
+         <widget class="QPushButton" name="five_pushButton">
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="6">
+         <widget class="QPushButton" name="three_pushButton">
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QPushButton" name="more_or_equal_pushButton">
+          <property name="text">
+           <string>&gt;=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="ab_pushButton">
+          <property name="text">
+           <string>a^b</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="5">
+         <widget class="QPushButton" name="eight_pushButton">
+          <property name="text">
+           <string>8</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QPushButton" name="four_pushButton">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="6">
+         <widget class="QPushButton" name="six_pushButton">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="4">
+         <widget class="QPushButton" name="zero_pushButton">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="4">
+         <widget class="QPushButton" name="one_pushButton">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="5">
+         <widget class="QPushButton" name="point_pushButton">
+          <property name="text">
+           <string>.</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="bracket1_pushButton">
+          <property name="text">
+           <string>(</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QPushButton" name="module_pushButton">
+          <property name="text">
+           <string>|a|</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QPushButton" name="a2_pushButton">
+          <property name="text">
+           <string>a^2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="8" colspan="2">
+         <widget class="QPushButton" name="funcs_pushButton">
+          <property name="text">
+           <string>funcs</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="3">
+         <widget class="QPushButton" name="pi_pushButton">
+          <property name="text">
+           <string>Pi</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="6">
+         <widget class="QPushButton" name="nine_pushButton">
+          <property name="text">
+           <string>9</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="8" colspan="2">
+         <widget class="QPushButton" name="backspace_pushButton">
+          <property name="text">
+           <string>backspace</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="2">
+         <widget class="QPushButton" name="sqrt_pushButton">
+          <property name="text">
+           <string>sqrt</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="10">
+         <widget class="QLineEdit" name="lineEdit"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="x_pushButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>x</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QPushButton" name="more_pushButton">
+          <property name="text">
+           <string>&gt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="bracket2_pushButton">
+          <property name="text">
+           <string>)</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="10">
+         <widget class="QCustomPlot" name="widget" native="true"/>
+        </item>
+        <item row="5" column="8" colspan="2">
+         <widget class="QPushButton" name="enter_pushButton">
+          <property name="text">
+           <string>enter</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="2">
+         <widget class="QPushButton" name="abc_pushButton">
+          <property name="text">
+           <string>ABC</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="less_pushButton">
+          <property name="text">
+           <string>&lt;</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="6">
+         <widget class="QPushButton" name="equal_pushButton">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="7">
+         <widget class="QPushButton" name="div_pushButton">
+          <property name="text">
+           <string>/</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="4">
+         <widget class="QPushButton" name="seven_pushButton">
+          <property name="text">
+           <string>7</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="2">
+         <widget class="QPushButton" name="less_or_equal_pushButton">
+          <property name="text">
+           <string>&lt;=</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page2"/>
+      <widget class="QWidget" name="page3"/>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="Line" name="line">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
       </property>
      </widget>
-     <widget class="QPushButton" name="point_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>352</x>
-        <y>142</y>
-        <width>34</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>.</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="div_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>458</x>
-        <y>40</y>
-        <width>34</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>/</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="two_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>352</x>
-        <y>108</y>
-        <width>38</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="plus_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>458</x>
-        <y>142</y>
-        <width>39</width>
-        <height>32</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>+</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_2"/>
-   </widget>
+    </item>
+   </layout>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>libs/qcustomplot/qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -118,3 +118,29 @@ void updateCursorPos(QLineEdit* lineEdit, const qint32 num)
     */
     lineEdit->setCursorPosition(lineEdit->cursorPosition() + num);
 }
+
+double evaluateExpression(const std::string &expr, double x)
+{
+    /*
+     * функция для вычисления значений выражения
+    */
+    typedef exprtk::symbol_table<double> symbol_table_t;
+    typedef exprtk::expression<double> expression_t;
+    typedef exprtk::parser<double> parser_t;
+
+    symbol_table_t symbol_table;
+    symbol_table.add_variable("x", x);
+    symbol_table.add_constants();
+
+    expression_t expression;
+    expression.register_symbol_table(symbol_table);
+
+    parser_t parser;
+    if (!parser.compile(expr, expression))
+    {
+        std::cerr << "Error: " << parser.error() << std::endl;
+        return 0.0;
+    }
+
+    return expression.value();
+}

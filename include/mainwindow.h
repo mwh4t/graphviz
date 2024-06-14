@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QEnterEvent>
+#include <QVector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -16,6 +18,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+protected:
+    void keyPressEvent(QKeyEvent *event) override;
+    void enterEvent(QEnterEvent *event) override;
 
 private slots:
     void on_x_pushButton_clicked();
@@ -83,6 +89,8 @@ private slots:
     void on_forth_pushButton_clicked();
 
     void on_backspace_pushButton_clicked();
+
+    void on_enter_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

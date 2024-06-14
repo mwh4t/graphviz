@@ -1,8 +1,12 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include "libs/json.hpp"
+#include "libs/json/json.hpp"
+#include "libs/qcustomplot/qcustomplot.h"
+#include "libs/exprtk/exprtk.hpp"
 #include <iostream>
+#include <cmath>
+#include <algorithm>
 #include <fstream>
 #include <QDebug>
 #include <QMessageBox>
@@ -32,5 +36,6 @@ bool isValidPassword(const QString& password);
 
 void updateLineEdit(QLineEdit* lineEdit, const QString& text);
 void updateCursorPos(QLineEdit* lineEdit, const qint32 num);
+double evaluateExpression(const std::string &expr, double x);
 
 #endif // UTILS_H
