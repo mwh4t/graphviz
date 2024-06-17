@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/rec">
+        <file>pics/gh.png</file>
+    </qresource>
+</RCC>

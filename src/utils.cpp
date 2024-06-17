@@ -144,3 +144,14 @@ double evaluateExpression(const std::string &expr, double x)
 
     return expression.value();
 }
+
+void updateBackButtonState(QStackedWidget* stackedWidget, QAction* back)
+{
+    /*
+     * функция обновления состояния кнопки "back"
+    */
+    if (stackedWidget->currentIndex() > 0)
+        back->setEnabled(true);
+    else
+        back->setEnabled(false);
+}

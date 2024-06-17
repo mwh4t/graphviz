@@ -7,11 +7,38 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("./users.db");
+    if(!db.open())
+        qDebug() << "Ошибка запуска БД: " << db.lastError();
+    else
+        createUsersTable(db);
+
+    json loadedData = jsonParser();
+
+    // проверка состояние флага для checkbox
+    if(!loadedData.empty() && loadedData.contains("checkbox state"))
+    {
+        bool isChecked = loadedData["checkbox state"].get<bool>();
+        ui->checkBox->setChecked(isChecked);
+
+        // подстановка данных юзера из json
+        if(isChecked && !loadedData.empty() && loadedData.contains("current account"))
+        {
+            QString email = QString::fromStdString(loadedData["current account"]["email"]);
+            QString password = QString::fromStdString(loadedData["current account"]["password"]);
+
+            ui->email_lineEdit->setText(email);
+            ui->pw_lineEdit->setText(password);
+        }
+    }
+
     ui->lineEdit->setFocus();
 
     // зум и перетаскивание графика
-    ui->widget->setInteraction(QCP::iRangeZoom, true);
-    ui->widget->setInteraction(QCP::iRangeDrag, true);
+    ui->graph->setInteraction(QCP::iRangeZoom, true);
+    ui->graph->setInteraction(QCP::iRangeDrag, true);
 }
 
 MainWindow::~MainWindow()
@@ -19,6 +46,57 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+
+/*
+ * методы кнопок тулбара
+*/
+void MainWindow::on_back_triggered()
+{
+    /*
+     * функция кнопки "Back"
+    */
+    if(ui->stackedWidget->currentIndex() == 3 || // страница регистрации
+        ui->stackedWidget->currentIndex() == 1) // страница восстановления
+        ui->stackedWidget->setCurrentIndex(2); // страница входа
+    else
+        ui->stackedWidget->setCurrentIndex(0); // главная страница
+    updateBackButtonState(ui->stackedWidget, ui->back);
+}
+
+void MainWindow::on_profile_triggered()
+{
+    /*
+     * переход на страницу профиля
+    */
+    json loadedData = jsonParser();
+
+    if(!loadedData["current account"].empty())
+    {
+        ui->stackedWidget->setCurrentIndex(4);
+        updateBackButtonState(ui->stackedWidget, ui->back);
+    }
+    else
+    {
+        ui->stackedWidget->setCurrentIndex(2);
+        updateBackButtonState(ui->stackedWidget, ui->back);
+    }
+}
+
+void MainWindow::on_gh_triggered()
+{
+    /*
+     * функция перехода на мой ГитХаб :)
+    */
+    QUrl url("https://github.com/mwh4t");
+    QDesktopServices::openUrl(url);
+}
+
+
+
+/*
+ * методы кнопок основной страницы
+*/
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     /*
@@ -29,22 +107,6 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
     QMainWindow::keyPressEvent(event);
 }
-
-
-
-void MainWindow::enterEvent(QEnterEvent *event) {
-    if (event->type() == QEvent::Enter) {
-        QWidget *widget = QApplication::widgetAt(QCursor::pos());
-        if (widget == ui->line) {
-            // Adjust QSizePolicy for ui->stackedWidget_2
-            ui->stackedWidget_2->setSizePolicy(QSizePolicy::Preferred, ui->stackedWidget_2->sizePolicy().verticalPolicy());
-            ui->stackedWidget_2->updateGeometry();
-        }
-    }
-    QMainWindow::enterEvent(event);
-}
-
-
 
 void MainWindow::on_enter_pushButton_clicked()
 {
@@ -65,15 +127,16 @@ void MainWindow::on_enter_pushButton_clicked()
     }
 
     // добавление графика
-    QCustomPlot *customPlot = ui->widget;
+    QCustomPlot *customPlot = ui->graph;
     customPlot->addGraph();
     customPlot->graph(0)->setData(x, y);
 
     // Изменение цвета графика
     QPen graphPen;
-    graphPen.setColor(QColor(Qt::black)); // Установите нужный цвет
+    graphPen.setColor(QColor(Qt::white));
     graphPen.setWidth(2);
     customPlot->graph(0)->setPen(graphPen);
+    ui->graph->setBackground(QBrush(Qt::black));
 
     customPlot->xAxis->setRange(0, 10);
     customPlot->yAxis->setRange(*std::min_element(y.begin(), y.end()), *std::max_element(y.begin(), y.end()));
@@ -346,4 +409,162 @@ void MainWindow::on_backspace_pushButton_clicked()
      * функция стирания последнего символа
     */
     ui->lineEdit->backspace();
+}
+
+
+
+/*
+ * методы кнопок страницы профиля, входа и регистрации
+*/
+void MainWindow::on_signin_pushButton_clicked()
+{
+    /*
+     * функция входа в аккаунт
+    */
+    QString email = ui->email_lineEdit->text();
+    QString password = ui->pw_lineEdit->text();
+
+    // проверка формата почты
+    if(!isValidEmail(email))
+    {
+        QMessageBox::critical(this, "", "Неверный формат почты!");
+        return;
+    }
+
+    // проверка формата пароля
+    if(!isValidPassword(password))
+    {
+        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        return;
+    }
+
+    // проверка наличия юзера в БД
+    if(checkUserCredentials(db, email, password))
+    {
+        QMessageBox::information(this, "", "Вход выполнен успешно!");
+
+        ui->email_pf_lineEdit->setText(email);
+        ui->pw_pf_lineEdit->setText(password);
+
+        // переход на страницу профиля
+        ui->stackedWidget->setCurrentIndex(4);
+
+        // сохранение данных юзера в json
+        if(ui->checkBox->isChecked())
+        {
+            json j;
+            j["checkbox state"] = true;
+            j["current account"]["email"] = email.toStdString();
+            j["current account"]["password"] = password.toStdString();
+
+            jsonSaver(j);
+        }
+        else
+        {
+            json j;
+            j["checkbox state"] = false;
+            j["current account"]["email"] = email.toStdString();
+            j["current account"]["password"] = password.toStdString();
+
+            jsonSaver(j);
+        }
+    }
+    else
+        QMessageBox::critical(this, "", "Неверная почта или пароль!");
+}
+
+void MainWindow::on_signup_pushButton_clicked()
+{
+    /*
+     * функция регистрации аккаунта
+    */
+    QString email = ui->email_lineEdit_2->text();
+    QString password = ui->pw_lineEdit_2->text();
+    QString confirmPassword = ui->pw_lineEdit_3->text();
+
+    // проверка формата почты
+    if(!isValidEmail(email))
+    {
+        QMessageBox::critical(this, "", "Неверный формат почты!");
+        return;
+    }
+
+    // проверка формата пароля
+    if(!isValidPassword(password))
+    {
+        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        return;
+    }
+
+    // проверка совпадения паролей
+    if(password != confirmPassword)
+    {
+        QMessageBox::critical(this, "", "Пароли не совпадают!");
+        return;
+    }
+
+    // добавление нового юзера в БД
+    if(addUser(db, email, password))
+    {
+        QMessageBox::information(this, "", "Регистрация прошла успешно!");
+
+        // переход на страницу профиля
+        ui->stackedWidget->setCurrentIndex(4);
+    }
+    else
+        QMessageBox::critical(this, "", "Ошибка регистрации! Возможно, пользователь "
+                                        "с такой почтой уже существует.");
+}
+
+void MainWindow::on_logout_pushButton_clicked()
+{
+    json loadedData = jsonParser();
+
+    loadedData["current account"].clear();
+    jsonSaver(loadedData);
+
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
+void MainWindow::on_show_pushButton_clicked()
+{
+    /*
+     * изменение отображения содержимого lineEdit на
+     * странице входа в аккаунт
+    */
+    cngEchoMode(ui->pw_lineEdit);
+}
+
+void MainWindow::on_show_pushButton_2_clicked()
+{
+    /*
+     * изменение отображения содержимого lineEdit на
+     * странице регистрации аккаунта 1
+    */
+    cngEchoMode(ui->pw_lineEdit_2);
+}
+
+void MainWindow::on_show_pushButton_3_clicked()
+{
+    /*
+     * изменение отображения содержимого lineEdit на
+     * странице регистрации аккаунта 1
+    */
+    cngEchoMode(ui->pw_lineEdit_3);
+}
+
+void MainWindow::on_forgotpw_pushButton_clicked()
+{
+    /*
+     * переход на страницу с восстановлением пароля
+    */
+    ui->stackedWidget->setCurrentIndex(1);
+}
+
+void MainWindow::on_noacc_pushButton_clicked()
+{
+    /*
+     * переход на страницу с регистрацией аккаунта
+    */
+    ui->stackedWidget->setCurrentIndex(3);
 }

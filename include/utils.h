@@ -34,8 +34,10 @@ void cngEchoMode(QLineEdit *lineEdit);
 bool isValidEmail(const QString& email);
 bool isValidPassword(const QString& password);
 
+// методы для основного функционала
 void updateLineEdit(QLineEdit* lineEdit, const QString& text);
 void updateCursorPos(QLineEdit* lineEdit, const qint32 num);
 double evaluateExpression(const std::string &expr, double x);
+void updateBackButtonState(QStackedWidget* stackedWidget, QAction* back);
 
 #endif // UTILS_H

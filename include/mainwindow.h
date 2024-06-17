@@ -2,8 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QEnterEvent>
+#include <QDialog>
+#include <QSqlDatabase>
+#include <QSqlError>
+#include <QSqlQuery>
 #include <QVector>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -21,7 +25,6 @@ public:
 
 protected:
     void keyPressEvent(QKeyEvent *event) override;
-    void enterEvent(QEnterEvent *event) override;
 
 private slots:
     void on_x_pushButton_clicked();
@@ -92,7 +95,32 @@ private slots:
 
     void on_enter_pushButton_clicked();
 
+    void on_profile_triggered();
+
+    void on_signin_pushButton_clicked();
+
+    void on_signup_pushButton_clicked();
+
+    void on_show_pushButton_clicked();
+
+    void on_show_pushButton_2_clicked();
+
+    void on_show_pushButton_3_clicked();
+
+    void on_forgotpw_pushButton_clicked();
+
+    void on_noacc_pushButton_clicked();
+
+    void on_back_triggered();
+
+    void on_gh_triggered();
+
+    void on_logout_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
+
+    QSqlDatabase db;
+    QSqlQuery *query;
 };
 #endif // MAINWINDOW_H

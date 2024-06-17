@@ -31,9 +31,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -103,18 +103,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -186,9 +186,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -258,18 +258,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -341,9 +341,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -413,18 +413,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>46</red>
+        <green>46</green>
+        <blue>46</blue>
        </color>
       </brush>
      </colorrole>
@@ -488,861 +488,116 @@
   <property name="windowTitle">
    <string>GraphViz</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    font-family: &quot;American Typewriter&quot;;
+}
+
+/* QPushButton styling */
+QPushButton {
+    background-color: #4d4d4d;
+    color: #ffffff;
+    border: 1px solid #646464;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-family: &quot;American Typewriter&quot;;
+}
+
+QPushButton:hover {
+    background-color: #5a5a5a;
+}
+
+QPushButton:pressed {
+    background-color: #3a3a3a;
+}
+
+/* QLabel styling */
+QLabel {
+    color: #ffffff;
+    font-family: &quot;American Typewriter&quot;;
+}
+
+/* QLineEdit styling */
+QLineEdit {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    border: 1px solid #646464;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: &quot;American Typewriter&quot;;
+}
+
+/* QToolBar styling */
+QToolBar {
+    background-color: #2e2e2e;
+    border-bottom: 1px solid #646464;
+}
+
+QToolBar QToolButton {
+    background-color: #4d4d4d;
+    color: #ffffff;
+    border: none;
+    padding: 5px;
+    margin: 2px;
+    font-family: &quot;American Typewriter&quot;;
+}
+
+QToolBar QToolButton:hover {
+    background-color: #5a5a5a;
+}
+
+QToolBar QToolButton:pressed {
+    background-color: #3a3a3a;
+}
+
+/* QMenuBar styling */
+QMenuBar {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    border-bottom: 1px solid #646464;
+}
+
+QMenuBar::item {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+QMenuBar::item:selected {
+    background-color: #5a5a5a;
+}
+
+QMenu {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    border: 1px solid #646464;
+}
+
+QMenu::item {
+    background-color: #3e3e3e;
+    color: #ffffff;
+    padding: 5px 10px;
+}
+
+QMenu::item:selected {
+    background-color: #5a5a5a;
+}
+
+/* QStatusBar styling */
+QStatusBar {
+    background-color: #2e2e2e;
+    color: #ffffff;
+}
+
+QStatusBar::item {
+    border: none;
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="1">
-     <widget class="QStackedWidget" name="stackedWidget_2">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="page">
-       <widget class="QStackedWidget" name="stackedWidget_3">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>450</width>
-          <height>600</height>
-         </rect>
-        </property>
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="signin_page">
-         <widget class="QPushButton" name="signin_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>380</y>
-            <width>141</width>
-            <height>55</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: black;
-	color: white;
-	font-family: Avenir;
-	font-size: 34px;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 10px;
-}
-
-QPushButton:hover {
-	background-color: &quot;#232323&quot;;
-}
-
-QPushButton:pressed {
-	background-color: black;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Войти</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="signin_label">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>50</y>
-            <width>131</width>
-            <height>51</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>54</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>Вход</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="email_label">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>120</y>
-            <width>81</width>
-            <height>39</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>24</pointsize>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>Почта</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="pw_label">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>220</y>
-            <width>97</width>
-            <height>39</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>24</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Пароль</string>
-          </property>
-         </widget>
-         <widget class="QCheckBox" name="checkBox">
-          <property name="geometry">
-           <rect>
-            <x>340</x>
-            <y>300</y>
-            <width>101</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QCheckBox {
-	spacing: 4px;
-	font-family: Avenir;
-	font-size: 14px;
-	color: black;
-}
-
-QCheckBox::indicator {
-	width: 14px;
-	height: 14px;
-	border-radius: 4px;
-}
-
-QCheckBox::indicator:unchecked {
-	background-color: white;
-	border: 2px solid black;
-}
-
-QCheckBox::indicator:unchecked:hover {
-	background-color: #f0f0f0;
-}
-
-QCheckBox::indicator:checked {
-	background-color: black;
-	border: 2px solid black;
-}
-
-QCheckBox::indicator:checked:hover {
-	background-color: #484848;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Запомнить?</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="noacc_label">
-          <property name="geometry">
-           <rect>
-            <x>130</x>
-            <y>540</y>
-            <width>96</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>14</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Нет аккаунта?</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="noacc_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>220</x>
-            <y>530</y>
-            <width>125</width>
-            <height>40</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-            <underline>true</underline>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: transparent;
-	color: black;
-	font-family: Avenir;
-	font-size: 14px;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 10px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-	color: &quot;#484848&quot;;
-}
-
-QPushButton:pressed {
-	color: black;
-}</string>
-          </property>
-          <property name="text">
-           <string>Регистрация</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="forgotpw_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>560</y>
-            <width>148</width>
-            <height>40</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-            <underline>true</underline>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: transparent;
-	color: black;
-	font-family: Avenir;
-	font-size: 14px;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 10px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-	color: &quot;#484848&quot;;
-}
-
-QPushButton:pressed {
-	color: black;
-}</string>
-          </property>
-          <property name="text">
-           <string>Забыли пароль?</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="show_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>260</y>
-            <width>71</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-            <underline>true</underline>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: transparent;
-	color: black;
-	font-family: Avenir;
-	font-size: 14px;
-	border: none;
-	border-radius: 10px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-	color: &quot;#484848&quot;;
-}
-
-QPushButton:pressed {
-	color: black;
-}</string>
-          </property>
-          <property name="text">
-           <string>Показать</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="email_lineEdit">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>150</y>
-            <width>431</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-family: Avenir;
-	font-size: 18px;
-	border: 2px solid black;
-	padding: 3px;
-	border-radius: 10px;
-	selection-background-color: black;
-	selection-color: white;
-}
-</string>
-          </property>
-          <property name="maxLength">
-           <number>50</number>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="pw_lineEdit">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>250</y>
-            <width>431</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-family: Avenir;
-	font-size: 18px;
-	border: 2px solid black;
-	padding: 3px;
-	padding-right: 78px;
-	border-radius: 10px;
-	selection-background-color: black;
-	selection-color: white;
-}
-</string>
-          </property>
-          <property name="maxLength">
-           <number>45</number>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-         <zorder>pw_label</zorder>
-         <zorder>pw_lineEdit</zorder>
-         <zorder>signin_pushButton</zorder>
-         <zorder>signin_label</zorder>
-         <zorder>email_label</zorder>
-         <zorder>checkBox</zorder>
-         <zorder>noacc_label</zorder>
-         <zorder>noacc_pushButton</zorder>
-         <zorder>forgotpw_pushButton</zorder>
-         <zorder>show_pushButton</zorder>
-         <zorder>email_lineEdit</zorder>
-        </widget>
-        <widget class="QWidget" name="signup_page">
-         <widget class="QPushButton" name="back_pushButton_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>31</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: black;
-	color: white;
-	font-family: Avenir;
-	font-size: 24px;
-	border: none;
-	border-radius: 10px;
-}
-
-QPushButton:hover {
-	background-color: &quot;#232323&quot;;
-}
-
-QPushButton:pressed {
-	background-color: black;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>&lt;</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="signup_label">
-          <property name="geometry">
-           <rect>
-            <x>60</x>
-            <y>40</y>
-            <width>341</width>
-            <height>61</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>54</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>Регистрация</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="email_label_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>120</y>
-            <width>81</width>
-            <height>39</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>24</pointsize>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>Почта</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="show_pushButton_2">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>260</y>
-            <width>71</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-            <underline>true</underline>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: transparent;
-	color: black;
-	font-family: Avenir;
-	font-size: 14px;
-	border: none;
-	border-radius: 10px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-	color: &quot;#484848&quot;;
-}
-
-QPushButton:pressed {
-	color: black;
-}</string>
-          </property>
-          <property name="text">
-           <string>Показать</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="signup_pushButton">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>460</y>
-            <width>141</width>
-            <height>55</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: black;
-	color: white;
-	font-family: Avenir;
-	font-size: 34px;
-	border: none;
-	padding: 10px 20px;
-	border-radius: 10px;
-}
-
-QPushButton:hover {
-	background-color: &quot;#232323&quot;;
-}
-
-QPushButton:pressed {
-	background-color: black;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>Войти</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QLabel" name="pw_label_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>220</y>
-            <width>97</width>
-            <height>39</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>24</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Пароль</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="pw_label_3">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>320</y>
-            <width>211</width>
-            <height>39</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>24</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>Повторите пароль</string>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="show_pushButton_3">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>360</y>
-            <width>71</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>-1</pointsize>
-            <underline>true</underline>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: transparent;
-	color: black;
-	font-family: Avenir;
-	font-size: 14px;
-	border: none;
-	border-radius: 10px;
-	text-decoration: underline;
-}
-
-QPushButton:hover {
-	color: &quot;#484848&quot;;
-}
-
-QPushButton:pressed {
-	color: black;
-}</string>
-          </property>
-          <property name="text">
-           <string>Показать</string>
-          </property>
-          <property name="autoDefault">
-           <bool>false</bool>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="email_lineEdit_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>150</y>
-            <width>431</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-family: Avenir;
-	font-size: 18px;
-	border: 2px solid black;
-	padding: 3px;
-	border-radius: 10px;
-	selection-background-color: black;
-	selection-color: white;
-}
-</string>
-          </property>
-          <property name="maxLength">
-           <number>50</number>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="pw_lineEdit_2">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>250</y>
-            <width>431</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-family: Avenir;
-	font-size: 18px;
-	border: 2px solid black;
-	padding: 3px;
-	padding-right: 78px;
-	border-radius: 10px;
-	selection-background-color: black;
-	selection-color: white;
-}
-</string>
-          </property>
-          <property name="maxLength">
-           <number>45</number>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="pw_lineEdit_3">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>350</y>
-            <width>431</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QLineEdit {
-	background-color: white;
-	color: black;
-	font-family: Avenir;
-	font-size: 18px;
-	border: 2px solid black;
-	padding: 3px;
-	padding-right: 78px;
-	border-radius: 10px;
-	selection-background-color: black;
-	selection-color: white;
-}
-</string>
-          </property>
-          <property name="maxLength">
-           <number>45</number>
-          </property>
-          <property name="echoMode">
-           <enum>QLineEdit::Password</enum>
-          </property>
-         </widget>
-         <zorder>back_pushButton_2</zorder>
-         <zorder>pw_label_3</zorder>
-         <zorder>pw_lineEdit_3</zorder>
-         <zorder>pw_label_2</zorder>
-         <zorder>pw_lineEdit_2</zorder>
-         <zorder>signup_label</zorder>
-         <zorder>email_label_2</zorder>
-         <zorder>show_pushButton_2</zorder>
-         <zorder>signup_pushButton</zorder>
-         <zorder>show_pushButton_3</zorder>
-         <zorder>email_lineEdit_2</zorder>
-        </widget>
-        <widget class="QWidget" name="forgotpw_page">
-         <widget class="QPushButton" name="back_pushButton_3">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>10</y>
-            <width>31</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">QPushButton {
-	background-color: black;
-	color: white;
-	font-family: Avenir;
-	font-size: 24px;
-	border: none;
-	border-radius: 10px;
-}
-
-QPushButton:hover {
-	background-color: &quot;#232323&quot;;
-}
-
-QPushButton:pressed {
-	background-color: black;
-}
-</string>
-          </property>
-          <property name="text">
-           <string>&lt;</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="temporary_label">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>180</y>
-            <width>381</width>
-            <height>211</height>
-           </rect>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>54</pointsize>
-            <italic>false</italic>
-            <bold>true</bold>
-            <kerning>true</kerning>
-           </font>
-          </property>
-          <property name="text">
-           <string>Ведутся технические работы :(</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-          <property name="wordWrap">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </widget>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="page_2"/>
-     </widget>
-    </item>
-    <item row="0" column="2">
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1353,7 +608,7 @@ QPushButton:pressed {
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="page1">
+      <widget class="QWidget" name="main_page">
        <layout class="QGridLayout" name="gridLayout">
         <item row="3" column="8">
          <widget class="QPushButton" name="back_pushButton">
@@ -1568,7 +823,11 @@ QPushButton:pressed {
          </widget>
         </item>
         <item row="0" column="0" colspan="10">
-         <widget class="QCustomPlot" name="widget" native="true"/>
+         <widget class="QCustomPlot" name="graph" native="true">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
         <item row="5" column="8" colspan="2">
          <widget class="QPushButton" name="enter_pushButton">
@@ -1621,28 +880,666 @@ QPushButton:pressed {
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="page2"/>
-      <widget class="QWidget" name="page3"/>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="Line" name="line">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
+      <widget class="QWidget" name="forgotpw_page">
+       <widget class="QLabel" name="temporary_label">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>180</y>
+          <width>381</width>
+          <height>211</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>54</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>technical work is underway :(</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="signin_page">
+       <widget class="QPushButton" name="show_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>210</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>show</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="pw_lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>200</y>
+          <width>431</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>45</number>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="noacc_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>450</x>
+          <y>480</y>
+          <width>125</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>sign up</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="signin_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>330</y>
+          <width>141</width>
+          <height>55</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>next</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pw_label">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>170</y>
+          <width>111</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>password</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="geometry">
+         <rect>
+          <x>570</x>
+          <y>250</y>
+          <width>101</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>remember?</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="email_label">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>70</y>
+          <width>81</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>24</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>e-mail</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="noacc_label">
+        <property name="geometry">
+         <rect>
+          <x>295</x>
+          <y>490</y>
+          <width>161</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>don't have an account?</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="forgotpw_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>510</y>
+          <width>148</width>
+          <height>40</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>forgot password?</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="email_lineEdit">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>100</y>
+          <width>431</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>50</number>
+        </property>
+       </widget>
+       <widget class="QLabel" name="signin_label">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>0</y>
+          <width>181</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>54</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>sign in</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <zorder>email_label</zorder>
+       <zorder>pw_label</zorder>
+       <zorder>pw_lineEdit</zorder>
+       <zorder>show_pushButton</zorder>
+       <zorder>noacc_pushButton</zorder>
+       <zorder>signin_pushButton</zorder>
+       <zorder>checkBox</zorder>
+       <zorder>noacc_label</zorder>
+       <zorder>forgotpw_pushButton</zorder>
+       <zorder>email_lineEdit</zorder>
+       <zorder>signin_label</zorder>
+      </widget>
+      <widget class="QWidget" name="signup_page">
+       <widget class="QLineEdit" name="pw_lineEdit_3">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>340</y>
+          <width>431</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>45</number>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="signup_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>390</x>
+          <y>450</y>
+          <width>141</width>
+          <height>55</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>next</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="show_pushButton_3">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>350</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>show</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="email_lineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>140</y>
+          <width>431</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>50</number>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="pw_lineEdit_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>240</y>
+          <width>431</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="maxLength">
+         <number>45</number>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pw_label_3">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>310</y>
+          <width>271</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>password confirmation</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="email_label_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>110</y>
+          <width>81</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>24</pointsize>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>e-mail</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="signup_label">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>30</y>
+          <width>341</width>
+          <height>61</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>54</pointsize>
+          <italic>false</italic>
+          <bold>false</bold>
+          <kerning>true</kerning>
+         </font>
+        </property>
+        <property name="text">
+         <string>sign up</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pw_label_2">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>210</y>
+          <width>111</width>
+          <height>39</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <pointsize>24</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>password</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="show_pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>250</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <family>American Typewriter</family>
+          <underline>true</underline>
+         </font>
+        </property>
+        <property name="text">
+         <string>show</string>
+        </property>
+        <property name="autoDefault">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <zorder>pw_label_3</zorder>
+       <zorder>pw_label_2</zorder>
+       <zorder>email_label_2</zorder>
+       <zorder>pw_lineEdit_3</zorder>
+       <zorder>signup_pushButton</zorder>
+       <zorder>show_pushButton_3</zorder>
+       <zorder>email_lineEdit_2</zorder>
+       <zorder>pw_lineEdit_2</zorder>
+       <zorder>signup_label</zorder>
+       <zorder>show_pushButton_2</zorder>
+      </widget>
+      <widget class="QWidget" name="profile_page">
+       <widget class="QLabel" name="email_pf_label">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>160</y>
+          <width>58</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>e-mail:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="pw_pf_label">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>240</y>
+          <width>71</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>password:</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="email_pf_lineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>160</y>
+          <width>451</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="pw_pf_lineEdit">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>320</x>
+          <y>230</y>
+          <width>451</width>
+          <height>21</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="logout_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>440</y>
+          <width>100</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>log out</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="back"/>
+   <addaction name="separator"/>
+   <addaction name="profile"/>
+   <addaction name="theme"/>
+   <addaction name="gh"/>
+  </widget>
+  <action name="profile">
+   <property name="text">
+    <string>👤</string>
+   </property>
+   <property name="toolTip">
+    <string>Profile</string>
+   </property>
+  </action>
+  <action name="back">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&lt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Back</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="theme">
+   <property name="text">
+    <string>🌑</string>
+   </property>
+   <property name="toolTip">
+    <string>Theme</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
+  <action name="gh">
+   <property name="icon">
+    <iconset resource="../resource.qrc">
+     <normaloff>:/rec/pics/gh.png</normaloff>:/rec/pics/gh.png</iconset>
+   </property>
+   <property name="text">
+    <string> </string>
+   </property>
+   <property name="toolTip">
+    <string>GitHub</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::NoRole</enum>
+   </property>
+  </action>
  </widget>
  <customwidgets>
   <customwidget>
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
-   <header>libs/qcustomplot/qcustomplot.h</header>
+   <header location="global">libs/qcustomplot/qcustomplot.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
  <connections/>
 </ui>
