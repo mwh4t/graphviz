@@ -1,5 +1,13 @@
 <RCC>
-    <qresource prefix="/rec">
-        <file>pics/gh.png</file>
+    <qresource prefix="/rec"/>
+    <qresource prefix="/">
+        <file>pics/gh_dark.png</file>
+        <file>pics/gh_light.png</file>
+        <file>pics/moon.png</file>
+        <file>pics/sun.png</file>
+        <file>pics/profile_dark.png</file>
+        <file>pics/profile_light.png</file>
+        <file>pics/back_dark.png</file>
+        <file>pics/back_light.png</file>
     </qresource>
 </RCC>

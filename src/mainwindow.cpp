@@ -8,37 +8,83 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    json loadedData = jsonParser();
+
+    // инициализация и подключение к БД
     db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName("./users.db");
     if(!db.open())
-        qDebug() << "Ошибка запуска БД: " << db.lastError();
+        qDebug() << "ошибка запуска БД: " << db.lastError();
     else
         createUsersTable(db);
 
-    json loadedData = jsonParser();
+    // установка темы
+    loadedData["isDarkTheme"];
+    jsonSaver(loadedData);
 
-    // проверка состояние флага для checkbox
+    if(loadedData["isDarkTheme"].is_null() ||
+        loadedData["isDarkTheme"].get<bool>())
+    {
+        darkThemeChanging(ui->back, ui->profile, ui->theme,
+                          ui->gh, ui->graph, this);
+
+        loadedData["isDarkTheme"] = true;
+        jsonSaver(loadedData);
+    }
+    else
+    {
+        lightThemeChanging(ui->back, ui->profile, ui->theme,
+                           ui->gh, ui->graph, this);
+    }
+
+    // проверка состояния флага для checkbox
     if(!loadedData.empty() && loadedData.contains("checkbox state"))
     {
         bool isChecked = loadedData["checkbox state"].get<bool>();
         ui->checkBox->setChecked(isChecked);
 
-        // подстановка данных юзера из json
-        if(isChecked && !loadedData.empty() && loadedData.contains("current account"))
+        // подстановка данных юзера из json если флаг установлен
+        if(isChecked && loadedData.contains("current account"))
         {
-            QString email = QString::fromStdString(loadedData["current account"]["email"]);
-            QString password = QString::fromStdString(loadedData["current account"]["password"]);
+            if (loadedData["current account"].contains("email") &&
+                !loadedData["current account"]["email"].is_null()) {
+                QString email = QString::fromStdString(
+                    loadedData["current account"]["email"]);
+                ui->email_lineEdit->setText(email);
+            }
 
-            ui->email_lineEdit->setText(email);
-            ui->pw_lineEdit->setText(password);
+            if (loadedData["current account"].contains("password") &&
+                !loadedData["current account"]["password"].is_null()) {
+                QString password = QString::fromStdString(
+                    loadedData["current account"]["password"]);
+                ui->pw_lineEdit->setText(password);
+            }
         }
     }
 
-    ui->lineEdit->setFocus();
+    // подстановка данных юзера из json в профиль
+    if (loadedData.contains("current account"))
+    {
+        if (loadedData["current account"].contains("email") &&
+            !loadedData["current account"]["email"].is_null()) {
+            QString email = QString::fromStdString(
+                loadedData["current account"]["email"]);
+            ui->email_pf_lineEdit->setText(email);
+        }
+
+        if (loadedData["current account"].contains("password") &&
+            !loadedData["current account"]["password"].is_null()) {
+            QString password = QString::fromStdString(
+                loadedData["current account"]["password"]);
+            ui->pw_pf_lineEdit->setText(password);
+        }
+    }
 
     // зум и перетаскивание графика
     ui->graph->setInteraction(QCP::iRangeZoom, true);
     ui->graph->setInteraction(QCP::iRangeDrag, true);
+
+    // ui->lineEdit->setFocus();
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +100,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_back_triggered()
 {
     /*
-     * функция кнопки "Back"
+     * функция кнопки Back
     */
     if(ui->stackedWidget->currentIndex() == 3 || // страница регистрации
         ui->stackedWidget->currentIndex() == 1) // страница восстановления
@@ -67,7 +113,7 @@ void MainWindow::on_back_triggered()
 void MainWindow::on_profile_triggered()
 {
     /*
-     * переход на страницу профиля
+     * функция перехода на страницу профиля
     */
     json loadedData = jsonParser();
 
@@ -80,6 +126,29 @@ void MainWindow::on_profile_triggered()
     {
         ui->stackedWidget->setCurrentIndex(2);
         updateBackButtonState(ui->stackedWidget, ui->back);
+    }
+}
+
+void MainWindow::on_theme_triggered()
+{
+    /*
+     * функция изменения темы
+    */
+    json loadedData = jsonParser();
+
+    if(loadedData["isDarkTheme"].get<bool>())
+    {
+        lightThemeChanging(ui->back, ui->profile, ui->theme,
+                           ui->gh, ui->graph, this);
+        loadedData["isDarkTheme"] = false;
+        jsonSaver(loadedData);
+    }
+    else
+    {
+        darkThemeChanging(ui->back, ui->profile, ui->theme,
+                          ui->gh, ui->graph, this);
+        loadedData["isDarkTheme"] = true;
+        jsonSaver(loadedData);
     }
 }
 
@@ -97,23 +166,11 @@ void MainWindow::on_gh_triggered()
 /*
  * методы кнопок основной страницы
 */
-void MainWindow::keyPressEvent(QKeyEvent *event)
-{
-    /*
-     * функция нажатия Enter для вызова слота
-    */
-    if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)
-        on_enter_pushButton_clicked();
-
-    QMainWindow::keyPressEvent(event);
-}
-
 void MainWindow::on_enter_pushButton_clicked()
 {
     /*
      * функция кнопки ввода
     */
-    // json loadedData = jsonParser();
     QString qExpression = ui->lineEdit->text();
     std::string expression = qExpression.toStdString();
 
@@ -122,26 +179,28 @@ void MainWindow::on_enter_pushButton_clicked()
     QVector<double> x(numPoints), y(numPoints);
     for (int i = 0; i < numPoints; i++)
     {
-        x[i] = i / 10.0;  // значения x
-        y[i] = evaluateExpression(expression, x[i]);  // значения y
+        x[i] = i / 10.0; // значения x
+        y[i] = evaluateExpression(expression, x[i]); // значения y
     }
 
     // добавление графика
-    QCustomPlot *customPlot = ui->graph;
+    QCustomPlot* customPlot = ui->graph;
     customPlot->addGraph();
     customPlot->graph(0)->setData(x, y);
 
-    // Изменение цвета графика
-    QPen graphPen;
-    graphPen.setColor(QColor(Qt::white));
-    graphPen.setWidth(2);
-    customPlot->graph(0)->setPen(graphPen);
-    ui->graph->setBackground(QBrush(Qt::black));
-
     customPlot->xAxis->setRange(0, 10);
-    customPlot->yAxis->setRange(*std::min_element(y.begin(), y.end()), *std::max_element(y.begin(), y.end()));
+    customPlot->yAxis->setRange(*std::min_element(y.begin(), y.end()),
+                                *std::max_element(y.begin(), y.end()));
 
     customPlot->replot();
+}
+
+void MainWindow::on_abc_pushButton_clicked()
+{
+    /*
+     * функция выбора буквы для ввода в lineEdit
+    */
+    QMessageBox::critical(this, "", "temporarily unavailable!");
 }
 
 void MainWindow::on_x_pushButton_clicked()
@@ -157,7 +216,8 @@ void MainWindow::on_y_pushButton_clicked()
     /*
      * функция ввода y в lineEdit
     */
-    updateLineEdit(ui->lineEdit, "y");
+    // updateLineEdit(ui->lineEdit, "y");
+    QMessageBox::critical(this, "", "temporarily unavailable!");
 }
 
 void MainWindow::on_a2_pushButton_clicked()
@@ -214,8 +274,9 @@ void MainWindow::on_module_pushButton_clicked()
     /*
      * функция ввода || в lineEdit
     */
-    updateLineEdit(ui->lineEdit, "||");
-    updateCursorPos(ui->lineEdit, -1);
+    // updateLineEdit(ui->lineEdit, "||");
+    // updateCursorPos(ui->lineEdit, -1);
+    QMessageBox::critical(this, "", "temporarily unavailable!");
 }
 
 void MainWindow::on_comma_pushButton_clicked()
@@ -223,7 +284,8 @@ void MainWindow::on_comma_pushButton_clicked()
     /*
      * функция ввода , в lineEdit
     */
-    updateLineEdit(ui->lineEdit, ",");
+    // updateLineEdit(ui->lineEdit, ",");
+    QMessageBox::critical(this, "", "temporarily unavailable!");
 }
 
 void MainWindow::on_less_or_equal_pushButton_clicked()
@@ -256,7 +318,7 @@ void MainWindow::on_pi_pushButton_clicked()
     /*
      * функция ввода Pi в lineEdit
     */
-    updateLineEdit(ui->lineEdit, "Pi");
+    updateLineEdit(ui->lineEdit, "3.14");
 }
 
 void MainWindow::on_zero_pushButton_clicked()
@@ -400,6 +462,7 @@ void MainWindow::on_forth_pushButton_clicked()
     /*
      * функция перемещения курсора вперёд
     */
+    // if()
     updateCursorPos(ui->lineEdit, 1);
 }
 
@@ -427,21 +490,21 @@ void MainWindow::on_signin_pushButton_clicked()
     // проверка формата почты
     if(!isValidEmail(email))
     {
-        QMessageBox::critical(this, "", "Неверный формат почты!");
+        QMessageBox::critical(this, "", "invalid e-mail format!");
         return;
     }
 
     // проверка формата пароля
     if(!isValidPassword(password))
     {
-        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        QMessageBox::critical(this, "", "invalid password format!");
         return;
     }
 
     // проверка наличия юзера в БД
     if(checkUserCredentials(db, email, password))
     {
-        QMessageBox::information(this, "", "Вход выполнен успешно!");
+        QMessageBox::information(this, "", "the sign in went through!");
 
         ui->email_pf_lineEdit->setText(email);
         ui->pw_pf_lineEdit->setText(password);
@@ -452,25 +515,29 @@ void MainWindow::on_signin_pushButton_clicked()
         // сохранение данных юзера в json
         if(ui->checkBox->isChecked())
         {
-            json j;
-            j["checkbox state"] = true;
-            j["current account"]["email"] = email.toStdString();
-            j["current account"]["password"] = password.toStdString();
+            json loadedData = jsonParser();
+            loadedData["checkbox state"] = true;
+            loadedData["current account"]["email"] = email.toStdString();
+            loadedData["current account"]["password"] = password.toStdString();
 
-            jsonSaver(j);
+            jsonSaver(loadedData);
         }
         else
         {
-            json j;
-            j["checkbox state"] = false;
-            j["current account"]["email"] = email.toStdString();
-            j["current account"]["password"] = password.toStdString();
+            json loadedData = jsonParser();
+            loadedData["checkbox state"] = false;
+            loadedData["current account"]["email"] = email.toStdString();
+            loadedData["current account"]["password"] = password.toStdString();
 
-            jsonSaver(j);
+            jsonSaver(loadedData);
         }
+
+        // очистка строк
+        ui->email_lineEdit->setText("");
+        ui->pw_lineEdit->setText("");
     }
     else
-        QMessageBox::critical(this, "", "Неверная почта или пароль!");
+        QMessageBox::critical(this, "", "invalid e-mail or password!");
 }
 
 void MainWindow::on_signup_pushButton_clicked()
@@ -485,39 +552,46 @@ void MainWindow::on_signup_pushButton_clicked()
     // проверка формата почты
     if(!isValidEmail(email))
     {
-        QMessageBox::critical(this, "", "Неверный формат почты!");
+        QMessageBox::critical(this, "", "invalid e-mail format!");
         return;
     }
 
     // проверка формата пароля
     if(!isValidPassword(password))
     {
-        QMessageBox::critical(this, "", "Неверный формат пароля!");
+        QMessageBox::critical(this, "", "invalid password format!");
         return;
     }
 
     // проверка совпадения паролей
     if(password != confirmPassword)
     {
-        QMessageBox::critical(this, "", "Пароли не совпадают!");
+        QMessageBox::critical(this, "", "passwords don't match!");
         return;
     }
 
     // добавление нового юзера в БД
     if(addUser(db, email, password))
     {
-        QMessageBox::information(this, "", "Регистрация прошла успешно!");
+        QMessageBox::information(this, "", "the sign up went through!");
 
         // переход на страницу профиля
         ui->stackedWidget->setCurrentIndex(4);
+
+        // очистка строк
+        ui->email_lineEdit_2->setText("");
+        ui->pw_lineEdit_2->setText("");
+        ui->pw_lineEdit_3->setText("");
     }
     else
-        QMessageBox::critical(this, "", "Ошибка регистрации! Возможно, пользователь "
-                                        "с такой почтой уже существует.");
+        QMessageBox::critical(this, "", "the sign up error!");
 }
 
 void MainWindow::on_logout_pushButton_clicked()
 {
+    /*
+     * функция выхода из аккаунта
+    */
     json loadedData = jsonParser();
 
     loadedData["current account"].clear();
@@ -551,6 +625,15 @@ void MainWindow::on_show_pushButton_3_clicked()
      * странице регистрации аккаунта 1
     */
     cngEchoMode(ui->pw_lineEdit_3);
+}
+
+void MainWindow::on_show_pushButton_4_clicked()
+{
+    /*
+     * изменение отображения содержимого lineEdit на
+     * странице профиля
+    */
+    cngEchoMode(ui->pw_pf_lineEdit);
 }
 
 void MainWindow::on_forgotpw_pushButton_clicked()

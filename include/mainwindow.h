@@ -23,9 +23,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-    void keyPressEvent(QKeyEvent *event) override;
-
 private slots:
     void on_x_pushButton_clicked();
 
@@ -116,6 +113,12 @@ private slots:
     void on_gh_triggered();
 
     void on_logout_pushButton_clicked();
+
+    void on_show_pushButton_4_clicked();
+
+    void on_abc_pushButton_clicked();
+
+    void on_theme_triggered();
 
 private:
     Ui::MainWindow *ui;

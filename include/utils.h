@@ -39,5 +39,10 @@ void updateLineEdit(QLineEdit* lineEdit, const QString& text);
 void updateCursorPos(QLineEdit* lineEdit, const qint32 num);
 double evaluateExpression(const std::string &expr, double x);
 void updateBackButtonState(QStackedWidget* stackedWidget, QAction* back);
-
+void setGraphColor(QCustomPlot* customPlot, QString background,
+                   QString captions, QString line);
+void lightThemeChanging(QAction* back, QAction* profile, QAction* theme, QAction* gh,
+                        QCustomPlot* graph, QMainWindow* MainWindow);
+void darkThemeChanging(QAction* back, QAction* profile, QAction* theme, QAction* gh,
+                        QCustomPlot* graph, QMainWindow* MainWindow);
 #endif // UTILS_H
